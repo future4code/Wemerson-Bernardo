@@ -1,0 +1,26 @@
+body {
+    background-color: #FFFFFF;
+}
+
+#menu ul {
+text-align: right;
+padding-right: 30px;
+}
+
+#menu ul li {
+display: inline;
+}
+
+#menu ul li a{
+padding-left: 20px;
+text-decoration: none;
+font-size: 20px;
+font-family: "PT Sans", sans-serif;
+color: #696969;
+}
+
+h1{
+    margin-top: -35px;
+    padding-left: 20px;
+    font-family: "Montserrat", sans-serif;
+}

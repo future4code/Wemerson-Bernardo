@@ -1,0 +1,139 @@
+#water1 {
+    grid-column-start: 3;
+}
+
+#poison2 {
+    grid-column-start: 5;
+}
+
+#water3 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+#water4 {
+    grid-column-start: 5;
+    grid-column-end: 2;
+}
+
+#water5 {
+    grid-column-start: 1;
+    grid-column-end: -2;
+}
+
+#poison6 {
+    grid-column-start: -3;
+}
+
+#water7 {
+    grid-column-start: 2;
+    grid-column-end: span 2;
+}
+
+#water8 {
+    grid-column-start: 1;
+    grid-column-end: span 5;
+}
+
+#water9 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+}
+
+#water10 {
+    grid-column: 4 / 6;
+}
+
+#water11 {
+    grid-column: 2 / span 3;
+}
+
+#water12 {
+    grid-row-start: 3;
+}
+
+#water13 {
+    grid-row: 3 / 6;
+}
+
+#poison14 {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+#water15 {
+    grid-column: 2 / 6;
+    grid-row: 1 / 6;
+}
+
+#water16 {
+    grid-area: 1 / 2 / 4 / 6;
+}
+
+#water-1 (17) {
+    grid-area: 1 / 4 / 6 / 5;
+}
+
+#water-2 {
+    grid-area: 2 / 3 / 5 / 6;
+}
+
+#poison18 {
+    order: 5;
+}
+
+.poison19 {
+    order: -1;
+}
+
+#garden20 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#garden21 {
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#garden22 {
+    display: grid;
+    grid-template-columns: 100px 3em 40%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#garden23 {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#garden24 {
+    display: grid;
+    grid-template-columns: 50px 1fr 2fr 3fr 50px;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#garden25 {
+    display: grid;
+    grid-template-columns: 75px 3fr 2fr;
+    grid-template-rows: 100%;
+}
+
+#garden26 {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 50px 0 0 0;
+}
+
+#garden27 {
+    display: grid;
+    grid-template: 60% 40% / 200px;
+}
+
+#garden28 {
+    display: grid;
+    grid-template: 1fr 50px / 20% 80%
+}

@@ -1,0 +1,122 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+#first-block {
+    background-color: red;
+    height: 11vh;
+}
+
+#top {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 1vw;
+    grid-column-gap: 1.5vw;
+    grid-row-gap: 3.5vh;
+}
+
+.blue-block {
+    display: grid;
+    background-color: blue;
+    height: 15vh;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+}
+
+.yellow-block {
+    display: grid;
+    background-color: yellow;
+    height: 15vh;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+}
+
+.green-block {
+    display: grid;
+    background-color: green;
+    height: 15vh;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    padding-left: 1vw;
+    padding-right: 1vw;
+    grid-column-gap: 1.5vw;
+    grid-row-gap: 3.5vh;
+    height: 30vh;
+}
+
+.black-block1 {
+    display: grid;
+    background-color: black;
+    color: white;
+    grid-column: 1 / 4;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+}
+
+.black-block2 {
+    display: grid;
+    background-color: black;
+    color: white;
+    grid-column: 4 / 7;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+}
+
+#end {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    padding: 1vw;
+    grid-column-gap: 1.5vw;
+    grid-row-gap: 3.5vh;
+}
+
+.white-block {
+    display: grid;
+    background-color: white;
+    height: 15vh;
+    border: 1px solid black;
+    justify-content: center;
+    align-content: center;
+}
+
+@media screen and (max-device-width: 420px) {
+    #top {
+        grid-template-columns: 1fr;
+    }
+    #main {
+        grid-template-columns: 1fr;
+        padding: 1vw;
+    }
+    .black-block1 {
+        grid-column: 1/2;
+    }
+    .black-block2 {
+        grid-column: 1/2;
+    }
+    #end {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-device-width: 421px) and (max-device-width: 800px) {
+    #top {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .green-block {
+        grid-column: span 2;
+    }
+}

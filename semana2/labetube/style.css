@@ -1,0 +1,79 @@
+        body {
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+        
+        header {
+            display: flex;
+            height: 10vh;
+            background-color: black;
+        }
+        
+        #img {
+            object-fit: fill;
+            max-height: 10vh;
+        }
+        
+        #busca {
+            width: 40vw;
+            height: 4vh;
+            border-radius: 10px;
+            align-self: center;
+            text-align: center;
+            margin-left: 10vw;
+        }
+        
+        article {
+            display: grid;
+            height: 75vh;
+            grid-template-columns: repeat(4, auto);
+            grid-template-rows: auto auto;
+            padding: 1vw;
+            grid-column-gap: 1.5vw;
+            grid-row-gap: 2vh;
+        }
+        
+        .video1,
+        .video2,
+        .video3,
+        .video4,
+        .video5,
+        .video6,
+        .video7,
+        .video8 {
+            background-color: pink;
+            height: 30vh;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: darkred;
+        }
+        
+        video {
+            width: 90%;
+            height: 90%;
+        }
+        
+        footer {
+            display: flex;
+            align-self: flex-end;
+            background-color: black;
+            height: 10vh;
+            font-size: 1.5em;
+            padding: auto;
+        }
+        
+        #mensagem-rodape {
+            align-items: center;
+            margin: auto;
+            color: white;
+        }
+        
+        @media screen and (max-device-width: 420px) {
+            article {
+                grid-template-columns: 1fr;
+            }
+        }

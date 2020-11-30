@@ -1,0 +1,83 @@
+body {
+    background-color: #FFFFFF;
+}
+
+#menu ul {
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 20px;
+}
+
+#menu ul li {
+    display: inline;
+}
+
+#menu ul li a {
+    padding-left: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "PT Sans", sans-serif;
+    color: #696969;
+}
+
+h1 {
+    margin-top: -45px;
+    padding-left: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.main img {
+    width: 100%;
+    height: 580px;
+    position: relative;
+    z-index: 1;
+}
+
+.projeto1 {
+    display: block;
+    margin-top: -550px;
+}
+
+.projeto1 ul {
+    position: absolute;
+    font-size: 17px;
+    z-index: 2;
+}
+
+.projeto1 img {
+    position: absolute;
+    width: 40%;
+    z-index: 2;
+    margin-left: 50%;
+}
+
+.projeto1 hd {
+    font-weight: bolder;
+    font-size: 25px;
+    border-bottom: 2px solid #FFCE00;
+}
+
+.projeto2 {
+    display: block;
+    margin-top: 280px;
+}
+
+.projeto2 ul {
+    position: absolute;
+    margin-left: 45%;
+    font-size: 17px;
+    z-index: 2;
+}
+
+.projeto2 img {
+    position: absolute;
+    width: 40%;
+    z-index: 2;
+    margin-left: 2%;
+}
+
+.projeto2 hd {
+    font-weight: bolder;
+    font-size: 25px;
+    border-bottom: 2px solid #FFCE00;
+}

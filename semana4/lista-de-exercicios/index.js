@@ -19,3 +19,12 @@ de itens que existem, foram para a array par e para a não par:
 (6) ----> Números pares
 (8) ----> Números impares
 */
+
+/* Exercício 4: Expostos alguns números aleatórios na array, o código determina uma variável sendo infinity
+e a outra sendo 0. A estrutura dentro da condição pede para que se um número for menor que o infinity
+seja este impresso. Já na outra condição diz que seja impresso um número maior que zero (no caso seria
+o maior número maior que zero).
+
+console.log(numero1) ----> -10;
+console.log(numero2) ----> 1590;
+*/

@@ -10,3 +10,12 @@ nos seguintes dados:
 Ações ----> novoMontante ----> (165)
 Tesouro Direto ----> segundoMontante ----> (TIPO DE INVESTIMENTO INFORMADO INCORRETO!)
 */
+
+/* Exercício 3: Dado alguns números em uma array e declaradas mais duas arrays vazias, a função faz com que
+sejam separados números pares em uma array e não pares em outra. Neste resultado mostra-se a quantidade
+de itens que existem, foram para a array par e para a não par:
+
+(Quantidade total de números 14)
+(6) ----> Números pares
+(8) ----> Números impares
+*/

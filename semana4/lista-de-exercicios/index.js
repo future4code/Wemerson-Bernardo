@@ -28,3 +28,32 @@ o maior número maior que zero).
 console.log(numero1) ----> -10;
 console.log(numero2) ----> 1590;
 */
+
+//Exercícios de Lógica de Programação
+
+/*      
+Exercício 1: 
+- While:
+
+    let numero = 0
+    while (numero < 10) {
+        console.log(numero)
+
+        i++
+    }
+
+-For:
+
+for (let numero = 0; numero < 10; numero++) {
+    console.log(numero)
+}    
+
+-For Of:
+
+let numeros = [20, 12, 4, 296, 31]
+
+for (let numero of numeros) {
+    console.log(numero)
+}
+
+*/

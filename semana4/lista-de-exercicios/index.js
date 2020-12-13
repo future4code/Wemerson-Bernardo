@@ -56,4 +56,21 @@ for (let numero of numeros) {
     console.log(numero)
 }
 
+Exercício 2: 
+
+a) `booleano1 && booleano2 && !booleano4`
+        //FALSE
+
+b) `(booleano1 && booleano2) || !booleano3`
+        //FALSE
+
+c)  `(booleano2 || booleano3) && (booleano4 || booleano1)`
+        //TRUE
+
+d) `!(booleano2 && booleano3) || !(booleano1 && booleano3)`
+        //TRUE
+
+e) `!(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3)`
+        //TRUE
+
 */

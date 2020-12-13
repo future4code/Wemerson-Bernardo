@@ -73,4 +73,29 @@ d) `!(booleano2 && booleano3) || !(booleano1 && booleano3)`
 e) `!(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3)`
         //TRUE
 
+
+Exercício 3:
+
+const quantidadeDeNumerosPares
+let i = 0
+while(i <= quantidadeDeNumerosPares) {
+  console.log(i*2)
+}
+
+Este código funciona?
+//Funciona mas não para a execução correta em que foi solicitado.
+
+Por quê? 
+//A função está retornando menor ou igual, o certo seria menor para não gerar um valor adicional, falta o 
+incremento para iterar a lista e a definição de um número para a variável quantidadeDeNumerosPares.
+
+Caso não funcione, corrija a implementação dele.
+
+let quantidadeDeNumerosPares = 5
+let i = 0
+while (i < quantidadeDeNumerosPares) {
+    console.log(i * 2)
+    i++;
+}
+
 */

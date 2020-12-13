@@ -54,9 +54,9 @@ let numeros = [20, 12, 4, 296, 31]
 
 for (let numero of numeros) {
     console.log(numero)
-}
+}*/
 
-Exercício 2: 
+/*Exercício 2: 
 
 a) `booleano1 && booleano2 && !booleano4`
         //FALSE
@@ -72,8 +72,9 @@ d) `!(booleano2 && booleano3) || !(booleano1 && booleano3)`
 
 e) `!(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3)`
         //TRUE
+*/
 
-
+/*
 Exercício 3:
 
 const quantidadeDeNumerosPares
@@ -99,3 +100,21 @@ while (i < quantidadeDeNumerosPares) {
 }
 
 */
+/*
+Exercício 5 
+
+let numero1 = 15;
+let numero2 = 30;
+
+let maior = numero1 > numero2 ? console.log(`O maior é: ${numero1}`) : console.log(`O maior é: ${numero2}`);
+let divisao = numero1 % numero2 === 0 ? console.log(`${numero1} é divisível por ${numero2}`) : console.log(`${numero1} não é divisível por ${numero2}`)
+
+if (numero1 > numero2) {
+    let diferenca = numero1 - numero2
+    console.log(`A diferença entre eles é ${diferenca}`)
+} else {
+    let diferenca2 = numero2 - numero1;
+    console.log(`A diferença entre eles é ${diferenca2}`)
+}
+
+} */

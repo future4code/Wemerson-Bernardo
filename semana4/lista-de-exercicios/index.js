@@ -230,3 +230,36 @@ let imparPar = arrayQualquer.map((arrayQualquer, index, array) => {
     arrayQualquer % 2 === 0 ? console.log(`${arrayQualquer} é par`) : console.log(`${arrayQualquer} é impar`);
 })
 */
+
+/*
+Exercício 3:
+
+const pessoas = [
+    { nome: "Paula", idade: 12, altura: 1.8 },
+    { nome: "João", idade: 20, altura: 1.3 },
+    { nome: "Pedro", idade: 15, altura: 1.9 },
+    { nome: "Luciano", idade: 22, altura: 1.8 },
+    { nome: "Artur", idade: 10, altura: 1.2 },
+    { nome: "Soter", idade: 70, altura: 1.9 }
+]
+
+const podeEntrar = pessoas.filter((pessoas, index, array) => {
+    if (pessoas.altura >= 1.5 && pessoas.idade > 14 && pessoas.idade < 60) {
+        return true
+    } else {
+        return false;
+    }
+})
+
+console.log(podeEntrar)
+
+const naoPodeEntrar = pessoas.filter((pessoas, index, array) => {
+    if (pessoas.idade < 14 || pessoas.idade > 60 || (pessoas.idade === 20)) {
+        return true
+    } else {
+        return false;
+    }
+})
+
+console.log(naoPodeEntrar)
+*/

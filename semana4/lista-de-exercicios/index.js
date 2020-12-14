@@ -131,3 +131,18 @@ let alerta = () => {
 console.log(alerta())
 
 */
+
+//Exercícios de Objetos
+
+/* 
+Exercício 1:
+
+    -Array: É um estrutura que permite que armazenemos vários elementos de forma mais organizada, podendo
+    ser acessados de forma mais consisa e rápida.
+
+    -Objetos: São estruturas mais complexas e ainda mais organizadas que arrays. Também podemos o acessar 
+    de forma ágil e com uma manipulação objetiva, repassando uma visão de forma mais real ao usuário.
+
+    A utilização de arrays e objetos se dão quando precisamos trabalhar com dados extensos e/ou precisamos
+    dar mais precisão as informações. O uso de ambos é importante 
+*/

@@ -179,3 +179,32 @@ const anonimizarPessoa = {
 
 console.log(anonimizarPessoa)
 */
+
+//Exercícios de Funções de array
+
+/*
+Exercício 1:
+
+let arrayNomes = [
+    { nome: "Pedro", idade: 20 },
+    { nome: "João", idade: 10 },
+    { nome: "Paula", idade: 12 },
+    { nome: "Artur", idade: 89 }
+]
+
+const adulto = arrayNomes.map((arrayNomes, indice, array) => {
+    if (arrayNomes.idade >= 20) {
+        return arrayNomes
+    }
+})
+
+console.log(adulto)
+
+const abaixoDe20 = arrayNomes.map((arrayNomes, indice, array) => {
+    if (arrayNomes.idade < 20) {
+        return arrayNomes
+    }
+})
+
+console.log(abaixoDe20)
+*/

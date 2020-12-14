@@ -146,3 +146,16 @@ Exercício 1:
     A utilização de arrays e objetos se dão quando precisamos trabalhar com dados extensos e/ou precisamos
     dar mais precisão as informações. O uso de ambos é importante 
 */
+/*
+Exercício 2:
+
+let lado1 = 10;
+let lado2 = 20;
+
+function criaRetangulo(info1, info2) {
+    let informacoes = { largura: info1, altura: info2, perimetro: 2 * (info1 + info2), area: info1 * info2 }
+    return informacoes
+}
+
+console.log(criaRetangulo(lado1, lado2))
+*/

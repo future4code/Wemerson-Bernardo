@@ -118,3 +118,16 @@ if (numero1 > numero2) {
 }
 
 } */
+
+//Exercícios de Função
+
+/*
+Exercício 2: 
+
+let alerta = () => {
+    alert("Hello Labenu!")
+}
+
+console.log(alerta())
+
+*/

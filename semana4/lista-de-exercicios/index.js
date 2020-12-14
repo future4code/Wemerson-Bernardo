@@ -159,3 +159,9 @@ function criaRetangulo(info1, info2) {
 
 console.log(criaRetangulo(lado1, lado2))
 */
+/*
+Exercício 3:
+
+let filmeFavorito = { titulo: "Green Book", ano: 2018, diretor: "Peter Farrelly", ator1: "Viggo Mortensen", ator2: "Mahershala Ali", atriz1: "Linda Cardellini" }
+console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.ator1}, ${filmeFavorito.ator2} e ${filmeFavorito.atriz1}.`)
+*/

@@ -263,3 +263,5 @@ const naoPodeEntrar = pessoas.filter((pessoas, index, array) => {
 
 console.log(naoPodeEntrar)
 */
+
+//Não fiz o restante dos exercícios por não ter tido tempo disponível para tal.

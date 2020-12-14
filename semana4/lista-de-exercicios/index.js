@@ -208,3 +208,25 @@ const abaixoDe20 = arrayNomes.map((arrayNomes, indice, array) => {
 
 console.log(abaixoDe20)
 */
+
+/*
+Exercício 2:
+
+let arrayQualquer = [1, 2, 3, 4, 5, 6];
+
+let multiplicacao = arrayQualquer.map((arrayQualquer, index, array) => {
+    return arrayQualquer * 2;
+})
+
+console.log(multiplicacao)
+
+let novaMultiplicacao = arrayQualquer.map((arrayQualquer, index, array) => {
+    return arrayQualquer * 3;
+})
+
+console.log(novaMultiplicacao)
+
+let imparPar = arrayQualquer.map((arrayQualquer, index, array) => {
+    arrayQualquer % 2 === 0 ? console.log(`${arrayQualquer} é par`) : console.log(`${arrayQualquer} é impar`);
+})
+*/

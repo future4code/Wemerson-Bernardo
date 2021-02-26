@@ -1,0 +1,13 @@
+.appBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    background-color: aqua;
+    position: static;
+}
+
+.headerButton {
+    margin-right: 5vw;
+}

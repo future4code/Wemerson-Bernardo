@@ -3,24 +3,24 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Login from '../pages/login/Login'
 import Register from '../pages/register/Register'
 import Feed from '../pages/feed/Feed'
-import Post from '../pages/post/Post'
+import PostComment from '../pages/post/PostComment'
 import Error from '../pages/error/Error'
 
 const Router = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path='/login'>
+                <Route exact path={'/login'}>
                     <Login />
                 </Route>
-                <Route exact path='/register'>
+                <Route exact path={'/register'}>
                     <Register />
                 </Route>
-                <Route exact path='/'>
+                <Route exact path={'/'}>
                     <Feed />
                 </Route>
-                <Route exact path='/post/:id'>
-                    <Post />
+                <Route exact path={'/post/:postId'}>
+                    <PostComment />
                 </Route>
                 <Route>
                     <Error />

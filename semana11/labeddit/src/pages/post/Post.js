@@ -1,92 +1,111 @@
-import React, { useState } from 'react'
-import CommentSection from '../feed/CommentSection'
+import React, { useEffect, useState } from 'react'
+import LinearProgress from '@material-ui/core/LinearProgress'
 import PostCard from './PostCard'
 import useProtectedPage from '../../hooks/useProtectdPage'
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
-import ChatBubbleIcon from '@material-ui/icons/ChatBubble'
-import useRequestData from '../../hooks/useRequestData'
-import CreatePost from '../../components/CreatePost'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import axios from 'axios'
 
 export default function Post() {
     useProtectedPage()
-    const posts = useRequestData([], `https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts`)
-    console.log(posts)
+    const [title, setTitle] = useState("")
+    const [text, setText] = useState("")
+    const [posts, setPosts] = useState([])
+    const [loading, setLoading] = useState(false)
 
-    const postsCards = posts.map((post) => {
-        return (<p>{post.id}</p>)
-    })
+    useEffect(() => {
+        listPosts()
+    }, [])
 
-    // const [like, setLike] = useState(false);
+    const listPosts = () => {
+        setLoading(true)
+        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts', {
+            headers: {
+            Authorization: localStorage.getItem('token')
+            } 
+        })
+        .then((response) => {
+            setPosts(response.data.posts)
+            console.log(response.data.posts)
+            setLoading(false)
+        })
+    }
 
-    // const [numberOfLikes, setnumberOfLikes] = useState(0);
+    const createPost = async () => {
+        const body = {
+            text: text,
+            title: title
+        }
+    
+        const axiosConfig = {
+          headers: {
+            Authorization: localStorage.getItem('token')
+          }
+        }
+    
+        try{
+        await axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts`, body, axiosConfig)
+            setText('')
+            setTitle('')
+            listPosts()
+          } catch (error) {
+            alert("Não foi possível realizar esta operação, tente novamente mais tarde")
+            console.log(error)
+          }
+      }
 
-    // const [sendComment, setSendComment] = useState(false);
+    const postVote = async (postId, direction) => {
+        const axiosConfig = {
+          headers: {
+            Authorization: localStorage.getItem('token')
+          }
+        }
+    
+        const body = {
+          direction: direction
+        }
+    
+        try{
+          await axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts/${postId}/vote`, body, axiosConfig)
+          listPosts()
+        } catch (error) {
+          alert("Não foi possível votar no momento, tento novamente mais tarde!")
+        }
+       }
 
-    // const [numberOfComments, setNumberOfComments] = useState(0);
+       const updateTitle = (e) => {
+        setTitle(e.target.value)
+      }
 
-    // const [allComents, setAllComments] = useState([]);
-
-    // const onClickCurtida = () => {
-    //     if (like) {
-    //         setLike(false);
-    //         setnumberOfLikes(0);
-    //     } else {
-    //         setLike(true);
-    //         setnumberOfLikes(1);
-    //     }
-    // };
-
-    // const onClickComentario = () => {
-    //     setSendComment(!sendComment);
-    // };
-
-    // const enviarComentario = (comentario) => {
-    //     setNumberOfComments(numberOfComments + 1);
-    //     const newListOfComments = [...allComents, comentario];
-    //     setSendComment(false);
-    //     setAllComments(newListOfComments);
-    // };
-
-    // const commentSection = sendComment ? (
-    //     <CommentSection enviarComentario={enviarComentario} />
-    // ) : (
-    //         allComents.map((comentario) => {
-    //             return (
-    //                 <div className="commentContainer">
-    //                     <p>{comentario}</p>
-    //                 </div>
-    //             );
-    //         })
-    //     );
+      const updateText = (e) => {
+        setText(e.target.value)
+      }
+    
 
     return (
         <div>
-            <PostCard 
-            username={"Usuário X"}
-            text={"Eu quis dizer, você não quis escutar. Agora não peça, não me faça promessas..."}
-            onclick={() => null}
+            <TextField 
+            placeholder={"Título do Post"}
+            value={title}
+            onChange={updateTitle}
             />
-            <CreatePost />
-            {postsCards}
-
-            {/* <div className="postContainer">
-                <div className="PostHeader">
-                    <p>Um usuário Qualquer</p>
-                </div>
-
-                <div className="postFooter">
-                    <div>
-                        <ArrowUpwardIcon />
-                        <ArrowDownwardIcon />
-                    </div>
-
-                    <CommentSection>
-                        <ChatBubbleIcon onClick={onClickComentario}/>
-                    </CommentSection>
-                </div>
-                {commentSection}
-            </div> */}
+            <TextField 
+            placeholder={"Insira seu texto aqui"}
+            value={text}
+            onChange={updateText}
+            />
+            <Button onClick={createPost} >Publicar Post</Button>
+            <hr />
+            {loading && <LinearProgress />}
+            {posts.map(post => {
+                return(
+                <PostCard 
+                key={post.id}
+                post={post}
+                postVote={postVote}
+                />
+                )
+            })}
         </div>
     )
 }

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import './PostStyled.css'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import PostCard from './PostCard'
 import useProtectedPage from '../../hooks/useProtectdPage'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import axios from 'axios'
+import {baseUrl} from '../../hooks/baseUrl'
 
 export default function Post() {
     useProtectedPage()
@@ -19,14 +21,13 @@ export default function Post() {
 
     const listPosts = () => {
         setLoading(true)
-        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts', {
+        axios.get(`${baseUrl}/posts`, {
             headers: {
             Authorization: localStorage.getItem('token')
             } 
         })
         .then((response) => {
             setPosts(response.data.posts)
-            console.log(response.data.posts)
             setLoading(false)
         })
     }
@@ -44,7 +45,7 @@ export default function Post() {
         }
     
         try{
-        await axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts`, body, axiosConfig)
+        await axios.post(`${baseUrl}/posts`, body, axiosConfig)
             setText('')
             setTitle('')
             listPosts()
@@ -66,7 +67,7 @@ export default function Post() {
         }
     
         try{
-          await axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts/${postId}/vote`, body, axiosConfig)
+          await axios.put(`${baseUrl}/posts/${postId}/vote`, body, axiosConfig)
           listPosts()
         } catch (error) {
           alert("Não foi possível votar no momento, tento novamente mais tarde!")
@@ -84,18 +85,23 @@ export default function Post() {
 
     return (
         <div>
+            <div className={'postCreate'}>
             <TextField 
+            className={'postTitle'}
             placeholder={"Título do Post"}
             value={title}
             onChange={updateTitle}
             />
             <TextField 
+            className={'postText'}
             placeholder={"Insira seu texto aqui"}
             value={text}
             onChange={updateText}
             />
             <Button onClick={createPost} >Publicar Post</Button>
+            </div>
             <hr />
+            
             {loading && <LinearProgress />}
             {posts.map(post => {
                 return(

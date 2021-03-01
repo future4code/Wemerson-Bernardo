@@ -21,4 +21,3 @@ export const register = (body, clear, history) => {
     }).catch((err) => alert("Ops! Ocorreu um erro interno, tente novamente mais tarde."))
 }
 
-

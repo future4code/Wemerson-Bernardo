@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react"
-import './CommentSection.css'
+import './PostStyled.css'
+import Header from '../../components/Header'
 import { useHistory, useParams } from 'react-router-dom'
 import PostCard from './PostCard'
 import { goToLogin, goToFeed } from '../../routes/Coordinator'
 import axios from 'axios'
+import {baseUrl} from '../../hooks/baseUrl'
 import List from '@material-ui/core/List'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
@@ -28,7 +30,7 @@ const CommentSection = (props) => {
   }, [])
 
   const postDetails = () => {
-    axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts/${params.postId}`, {
+    axios.get(`${baseUrl}/posts/${params.postId}`, {
       headers: {
         Authorization: localStorage.getItem('token')
       }
@@ -54,7 +56,7 @@ const CommentSection = (props) => {
     }
 
     try{
-    await axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts/${params.postId}/comment`, body, axiosConfig)
+    await axios.post(`${baseUrl}/posts/${params.postId}/comment`, body, axiosConfig)
         setComment('')
         postDetails()
       } catch (error) {
@@ -75,7 +77,7 @@ const CommentSection = (props) => {
     }
 
     try{
-      await axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts/${params.postId}/comment/${commentId}/vote`, body, axiosConfig)
+      await axios.put(`${baseUrl}/posts/${params.postId}/comment/${commentId}/vote`, body, axiosConfig)
       postDetails()
     } catch (error) {
       alert("Não foi possível votar no momento, tento novamente mais tarde!")
@@ -83,14 +85,18 @@ const CommentSection = (props) => {
    }
 
   return (
-    <div className="commentContainer">
+    <div>
+      <Header />
       {postDetail !== null && <PostCard post={postDetail} hideComment />}
+      <div className={'commentContainer'}>
       <TextField 
-      placeholder={'insert your comment'}
+      className="commentTextContainer"
+      placeholder={'Insira seu comentário'}
       value={comment}
       onChange={updateComment}
       />
-      <Button onClick={createComment} >Send Comment</Button>
+      <Button onClick={createComment}>Enviar</Button>
+      </div>
       <List>
         {postDetail && postDetail.comments.map((comment) => {
           return(
@@ -102,7 +108,7 @@ const CommentSection = (props) => {
         })}
       </List>
     </div>
-  );
-};
+  )
+}
 
 export default CommentSection;

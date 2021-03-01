@@ -1,15 +1,13 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { goToFeed, goToLogin } from '../routes/Coordinator'
-import './Header.css'
 
 export default function Header() {
     const history = useHistory()
 
     return (
-        <div className='appBar'>
-            <p onClick={() => goToFeed(history)}>LabEddit</p>
-            <button onClick={() => goToLogin(history)} className='headerButton'>LOGIN</button>
+        <div className={'headerPost'}>
+            <img src={'https://images2.imgbox.com/7d/c7/F22hds4t_o.gif'} alt={'LabEddit Logo'} width={"600px"} height={"100px"} onClick={() => goToFeed(history)}/>
         </div>
-    );
+    )
 }

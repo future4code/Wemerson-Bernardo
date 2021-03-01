@@ -1,6 +1,5 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-import './PostCard.css'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
@@ -33,25 +32,16 @@ const PostCard = (props) => {
     return (
         <Card>
             <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe">
-                        R
-          </Avatar>
-                }
-                action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                    </IconButton>
-                }
                 title={props.post.title}
                 subheader={props.post.username}
             />
             <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" color="textSecondary">
                     {props.post.text}
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
+                <div className={'postButtonVotes'}>
                 <IconButton onClick={upPostVote}>
                     <ArrowUpwardIcon color={props.post.userVoteDirection == 1 ? "primary" : "disabled"}/>
                 </IconButton>
@@ -59,6 +49,8 @@ const PostCard = (props) => {
                 <IconButton onClick={downPostVote}>
                     <ArrowDownwardIcon color={props.post.userVoteDirection == -1 ? "secondary" : "disabled"}/>
                 </IconButton>
+                </div>
+                <div className={'postButtonComment'}>
                 {!props.hideComment && (<Button
                     variant="contained"
                     onClick={handleGoToPost}
@@ -67,8 +59,10 @@ const PostCard = (props) => {
                 >
                 Comentário
                 </Button>)}
-                
+                </div>
+
             </CardActions>
+            <hr />
         </Card>
     )
 }

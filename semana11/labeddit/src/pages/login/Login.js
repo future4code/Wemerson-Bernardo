@@ -18,7 +18,6 @@ import { useHistory } from 'react-router-dom'
 import { login } from '../../requests/Users'
 import useUnprotectedPage from '../../hooks/useUnprotectedPage'
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',

@@ -1,0 +1,32 @@
+.postCreate {
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.postTitle {
+   width: 15vw; 
+}
+
+.postText {
+    width: 30vw;
+}
+
+.postButtonComment {
+    padding-left: 30vw;
+}
+
+.postButtonVotes {
+    display: flex;
+    padding-left: 25vw;
+}
+
+.commentContainer {
+    padding-top: 5vh;
+}
+
+.commentTextContainer {
+    width: 45vw;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "exercise1",
+  "version": "1.0.0",
+  "description": "Resolução do exercício 1",
+  "main": "exercise1.js",
+  "scripts": {
+    "start": "node ./exercise1.js"
+  },
+  "author": "Wemerson-Bernardo",
+  "license": "ISC"
+}

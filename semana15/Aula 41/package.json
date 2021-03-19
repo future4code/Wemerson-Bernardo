@@ -1,0 +1,13 @@
+{
+  "name": "aula-41",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node ./build/index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.2.3"
+  }
+}

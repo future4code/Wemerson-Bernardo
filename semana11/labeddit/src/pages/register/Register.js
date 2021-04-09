@@ -1,4 +1,9 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
+import { goToLogin } from '../../routes/Coordinator'
+import { register } from '../../requests/Users'
+import useForm from '../../hooks/useForm'
+import useUnprotectedPage from '../../hooks/useUnprotectedPage'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -10,11 +15,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
-import useForm from '../../hooks/useForm'
-import { goToLogin } from '../../routes/Coordinator'
-import { useHistory } from 'react-router-dom'
-import useUnprotectedPage from '../../hooks/useUnprotectedPage'
-import { register } from '../../requests/Users'
 
 const useStyles = makeStyles((theme) => ({
   paper: {

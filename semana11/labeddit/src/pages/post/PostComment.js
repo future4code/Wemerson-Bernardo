@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react"
-import './PostStyled.css'
-import Header from '../../components/Header'
 import { useHistory, useParams } from 'react-router-dom'
-import PostCard from './PostCard'
 import { goToLogin, goToFeed } from '../../routes/Coordinator'
+import {baseUrl} from '../../requests/baseUrl'
+import './PostStyled.css'
 import axios from 'axios'
-import {baseUrl} from '../../hooks/baseUrl'
+import Header from '../../components/Header'
+import CommentList from './PostCommentList'
+import PostCard from './PostCard'
 import List from '@material-ui/core/List'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
-import CommentList from './PostCommentList'
+
 
 const CommentSection = (props) => {
   const [postDetail, setPostDetail] = useState(null)
@@ -37,6 +38,8 @@ const CommentSection = (props) => {
     })
       .then((response) => {
         setPostDetail(response.data.post)
+      }).catch ((error) =>  {
+        alert("Não foi possível mostrar os detalhes do comentário")
       })
   }
 

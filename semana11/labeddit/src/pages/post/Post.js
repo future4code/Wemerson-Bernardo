@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import PostCard from './PostCard'
+import useProtectedPage from '../../hooks/useProtectedPage'
+import {baseUrl} from '../../requests/baseUrl'
 import './PostStyled.css'
 import LinearProgress from '@material-ui/core/LinearProgress'
-import PostCard from './PostCard'
-import useProtectedPage from '../../hooks/useProtectdPage'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import axios from 'axios'
-import {baseUrl} from '../../hooks/baseUrl'
 
 export default function Post() {
     useProtectedPage()
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
+    const [inputText, setInputText] = useState("")
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -29,6 +30,8 @@ export default function Post() {
         .then((response) => {
             setPosts(response.data.posts)
             setLoading(false)
+        }). catch ((error) => {
+            alert("Não foi possível mostrar o feed, tente novemente em instantes.")
         })
     }
 
@@ -46,9 +49,9 @@ export default function Post() {
     
         try{
         await axios.post(`${baseUrl}/posts`, body, axiosConfig)
+            listPosts()
             setText('')
             setTitle('')
-            listPosts()
           } catch (error) {
             alert("Não foi possível realizar esta operação, tente novamente mais tarde")
             console.log(error)
@@ -70,7 +73,7 @@ export default function Post() {
           await axios.put(`${baseUrl}/posts/${postId}/vote`, body, axiosConfig)
           listPosts()
         } catch (error) {
-          alert("Não foi possível votar no momento, tento novamente mais tarde!")
+          alert("Não foi possível votar no momento, tente novamente mais tarde!")
         }
        }
 
@@ -81,19 +84,36 @@ export default function Post() {
       const updateText = (e) => {
         setText(e.target.value)
       }
+
+      const handleInputText = (e) => {
+        setInputText(e.target.value)
+      }
     
+      const filterFeed = () => {
+        return posts.filter((post) => {
+          const title = post.title.toLowerCase()
+          return title.indexOf(inputText.toLowerCase()) > -1
+        })
+      }
 
     return (
-        <div>
-            <div className={'postCreate'}>
+        <div className="searchContainer">
+            <div>
+            <div className="searchTitle">
             <TextField 
-            className={'postTitle'}
+            placeholder={"Pesquise por Título"}
+            value={inputText}
+            onChange={handleInputText}
+            />
+            </div>
+            <TextField 
+            className={"postTitle"}
             placeholder={"Título do Post"}
             value={title}
             onChange={updateTitle}
             />
             <TextField 
-            className={'postText'}
+            className={"postText"}
             placeholder={"Insira seu texto aqui"}
             value={text}
             onChange={updateText}
@@ -103,7 +123,7 @@ export default function Post() {
             <hr />
             
             {loading && <LinearProgress />}
-            {posts.map(post => {
+            {filterFeed().map(post => {
                 return(
                 <PostCard 
                 key={post.id}
